@@ -4,6 +4,8 @@ var SwaggerExpress = require('swagger-express-mw');
 var app = require('express')();
 module.exports = app; // for testing
 
+require('dotenv').config();
+
 var config = {
   appRoot: __dirname // required config
 };
@@ -13,6 +15,9 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
 
   // install middleware
   swaggerExpress.register(app);
+
+
+  app.use('/', require('./api/routes'));
 
   var port = process.env.PORT || 10010;
   app.listen(port);

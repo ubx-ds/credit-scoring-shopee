@@ -1,16 +1,14 @@
+const { scraper } = require('../../scraper/scraper');
+const creditCompute = require('./services/creditScore')
 
-class CreditScoring {
-
-  prodScore(req, res, next) {
-
-  }
-
-  test(req, res, next) {
-    
-  }
+function scrape(req, res, next) {
+  scraper()
 }
 
+function home(req, res, next) {
+
+}
 
 module.exports = {
-  CreditScoring
+  scrape,
 }
