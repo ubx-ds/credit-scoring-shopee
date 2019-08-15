@@ -1,0 +1,2 @@
+const osmosis = require('osmosis');
+
