@@ -10,8 +10,8 @@
 
 function computeScore(shop_details) {
 
-  let score = (computeBusinessAge(date_joined) + computeActualRating(rating, no_of_ratings, date_joined)
-    + computeCancellationRate(cancellation_rate) + chat_performance) / 4;
+  let score = (computeBusinessAge(shop_details.date_joined) + computeActualRating(shop_details.rating, shop_details.no_of_ratings, shop_details.date_joined)
+    + computeCancellationRate(shop_details.cancellation_rate) + shop_details.chat_performance) / 4;
 
   return score;
 }
@@ -39,3 +39,5 @@ function computeActualRating(rating, no_of_ratings, date_joined) {
 function computeCancellationRate(cancellation_rate) {
   return 100 - cancellation_rate;
 }
+
+module.exports = computeScore;
