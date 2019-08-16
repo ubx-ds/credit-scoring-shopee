@@ -1,9 +1,18 @@
+[{
+	"name": "LowDogHobby",
+	"chat_performance": 80,
+	"cancellation_rate": 3,
+	"followers": 1366,
+	"rating": 4.9,
+	"no_of_ratings": 1183,
+	"date_joined": 17
+},
 {
-	name: "LowDogHobby",
-	chat_performance: 66;
-	cancellation_rate: 3;
-	followers: 1366,
-	rating: 4.9,
-	no_of_ratings: 1183,
-	date_joined: 17
-}
+	"name": "LowDogHobby2",
+	"chat_performance": 66,
+	"cancellation_rate": 3,
+	"followers": 1366,
+	"rating": 4.9,
+	"no_of_ratings": 1183,
+	"date_joined": 17
+}]

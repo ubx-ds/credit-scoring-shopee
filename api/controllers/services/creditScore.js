@@ -1,4 +1,5 @@
-
+const fs = require('fs');
+const path = require('path')
 /**
  * followers
  * rating
@@ -8,8 +9,9 @@
  * chat_performance
  */
 
-function computeScore(shop_details) {
-
+function computeScore(index) {
+  let data_path = path.resolve(__dirname+'/../../../sample.json');
+  const shop_details = JSON.parse(fs.readFileSync(data_path))[index];
   let score = (computeBusinessAge(shop_details.date_joined) + computeActualRating(shop_details.rating, shop_details.no_of_ratings, shop_details.date_joined)
     + computeCancellationRate(shop_details.cancellation_rate) + shop_details.chat_performance) / 4;
 

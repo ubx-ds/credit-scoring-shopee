@@ -8,15 +8,8 @@ function scrape(req, res, next) {
 }
 
 function score(req, res, next) {
-  let data = {
-    followers: 1364,
-    rating: 4.9,
-    no_of_ratings: 1183,
-    date_joined: 17,
-    cancellation_rate: 3,
-    chat_performance: 67
-  }
-  let score = creditCompute(data)
+  let index = req.params.index;
+  let score = creditCompute(index)
   res.send(200, score);
 }
 
