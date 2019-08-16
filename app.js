@@ -2,6 +2,9 @@
 
 var SwaggerExpress = require('swagger-express-mw');
 var app = require('express')();
+var express = require('express');
+const path = require('path');
+
 module.exports = app; // for testing
 
 require('dotenv').config();
@@ -15,7 +18,10 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
 
   // install middleware
   swaggerExpress.register(app);
-
+  app.set('views', __dirname + '/views');
+  app.use(express.static(path.join(__dirname, 'views')));
+  app.engine('html', require('ejs').renderFile);
+  app.set('view engine', 'html');
 
   app.use('/', require('./api/routes'));
 

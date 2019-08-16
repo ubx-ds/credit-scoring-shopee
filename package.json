@@ -8,9 +8,12 @@
   "license": "",
   "main": "app.js",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
     "express": "^4.12.3",
     "osmosis": "^1.1.10",
-    "swagger-express-mw": "^0.1.0"
+    "swagger-express-mw": "^0.7.0"
   },
   "devDependencies": {
     "should": "^7.1.0",

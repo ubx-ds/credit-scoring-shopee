@@ -1,3 +1,5 @@
+const path = require('path');
+
 const { scraper } = require('../../scraper/scraper');
 const creditCompute = require('./services/creditScore')
 
@@ -5,7 +7,7 @@ function scrape(req, res, next) {
   scraper()
 }
 
-function home(req, res, next) {
+function score(req, res, next) {
   let data = {
     followers: 1364,
     rating: 4.9,
@@ -18,7 +20,13 @@ function home(req, res, next) {
   res.send(200, score);
 }
 
+function home(req, res, next) {
+  let view = path.resolve(__dirname+'/../../views/index')
+  res.render(view);
+}
+
 module.exports = {
   scrape,
-  home
+  home,
+  score
 }
